@@ -21,3 +21,26 @@ Merges the training and the test sets to create one data set
 xDataSet (10299 rows, 561 columns) is created by merging xTrain and xTest using rbind() function
 yDataSet (10299 rows, 1 column) is created by merging yTrain and yTest using rbind() function
 subjectDataSet (10299 rows, 1 column) is created by merging subjectTrain and subjectTest using rbind() function
+singleDataSet (10299 rows,  68 columns) is created by merging xDataSet, yDataSet, and subjectDataSet using cbind() function.
+
+Extracts only the measurements on the mean and standard deviation for each measurement
+xDataSet_mean_std (10299 rows, 66 columns) is created by subset based on the logical vector to keep only desired columns, i.e. mean() and std().
+
+Uses descriptive activity names to name the activities in the data set
+Entire numbers in code column of the yDataSet replaced with corresponding activity taken from second column of the activities variable
+
+Appropriately labels the data set with descriptive variable names
+All Acc in column’s name replaced by Acceleration
+All GyroJerk in column’s name replaced by AngularAcceleration
+All Gyro in column’s name replaced by AngularSpeed
+All ^t in column’s name replaced by TimeDomain.
+All ^f in column’s name replaced by FrequencyDomain.
+All Mag in column’s name replaced by Magnitude
+All \\.mean in column’s name replaced by .Mean
+All \\.std in column’s name replaced by .StandardDeviation
+All Freq\\. in column’s name replaced by Frequency.
+All Freq$ in column’s name replaced by Frequency
+
+From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+Data2 (180 rows, 68 columns) is created by sumarizing singleDataSet taking the means of each variable for each activity and each subject, after groupped by subject and activity.
+Export into tidydata.txt file.
