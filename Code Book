@@ -1,0 +1,23 @@
+The run_analysis.R script loads and prepares the date and then executes the 5 steps outline in the course project.
+
+Load raw data set from Coursera R Lab Sandbox:
+Dataset uploaded to sandbox in the folder 'UCI HAR Dataset'.
+
+Assign each data to variables:
+subjectTest <- test/subject_test.txt : 2947 rows, 1 column
+contains test data of 9/30 volunteer test subjects being observed
+subjectTrain <- test/subject_train.txt : 7352 rows, 1 column
+contains train data of 21/30 volunteer subjects being observed
+xTest <- test/X_test.txt : 2947 rows, 561 columns
+contains recorded features test data
+yTest <- test/y_test.txt : 2947 rows, 1 columns
+contains test data of activities’code labels
+xTrain <- test/X_train.txt : 7352 rows, 561 columns
+contains recorded features train data
+yTrain <- test/y_train.txt : 7352 rows, 1 columns
+contains train data of activities’code labels
+
+Merges the training and the test sets to create one data set
+xDataSet (10299 rows, 561 columns) is created by merging xTrain and xTest using rbind() function
+yDataSet (10299 rows, 1 column) is created by merging yTrain and yTest using rbind() function
+subjectDataSet (10299 rows, 1 column) is created by merging subjectTrain and subjectTest using rbind() function
